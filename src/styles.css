@@ -19,3 +19,25 @@ main > h1 {
   text-align: center;
   font-size: 3.5em;
 }
+
+/* improved button style */
+#miBoton {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#miBoton:hover {
+  background-color: #0056b3;
+}
+
+#miBoton:active {
+  background-color: #004085;
+}
