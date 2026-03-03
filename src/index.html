@@ -42,9 +42,23 @@
       colorizeText('h2');
     });
 
-    // you can add button behavior if needed
+    // recolor all letters in h1 and h2
+    function recolorHeaders() {
+      const spans = document.querySelectorAll('h1 span, h2 span');
+      spans.forEach(s => {
+        s.style.color = randomColor();
+      });
+    }
+
+    // if headers haven't been split into spans yet, colorize first
+    function ensureColorized() {
+      if (!document.querySelector('h1 span')) colorizeText('h1');
+      if (!document.querySelector('h2 span')) colorizeText('h2');
+    }
+
     document.getElementById('miBoton').addEventListener('click', () => {
-      alert('Botón presionado');
+      ensureColorized();
+      recolorHeaders();
     });
   </script>
 </body>
