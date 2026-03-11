@@ -16,51 +16,6 @@
 
   <button id="miBoton">hola y ir</button>
 
-  <script>
-    // function to generate a random hex color
-    function randomColor() {
-      return '#'+Math.floor(Math.random()*16777215).toString(16);
-    }
-
-    function colorizeText(selector) {
-      const elems = document.querySelectorAll(selector);
-      elems.forEach(el => {
-        const text = el.textContent;
-        el.innerHTML = '';
-        for (let char of text) {
-          const span = document.createElement('span');
-          span.textContent = char;
-          span.style.color = randomColor();
-          el.appendChild(span);
-        }
-      });
-    }
-
-    // apply to h1 and h2 on DOMContentLoaded
-    document.addEventListener('DOMContentLoaded', () => {
-      colorizeText('h1');
-      colorizeText('h2');
-    });
-
-    // recolor all letters in h1 and h2
-    function recolorHeaders() {
-      const spans = document.querySelectorAll('h1 span, h2 span');
-      spans.forEach(s => {
-        s.style.color = randomColor();
-      });
-    }
-
-    // if headers haven't been split into spans yet, colorize first
-    function ensureColorized() {
-      if (!document.querySelector('h1 span')) colorizeText('h1');
-      if (!document.querySelector('h2 span')) colorizeText('h2');
-    }
-
-    document.getElementById('miBoton').addEventListener('click', () => {
-      ensureColorized();
-      recolorHeaders();
-    });
-  </script>
 </body>
 
 </html>
